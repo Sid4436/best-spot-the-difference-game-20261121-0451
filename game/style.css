@@ -1,0 +1,137 @@
+/* style.css — tampilan "Sore di Taman Desa": hangat, senja, mudah dibaca. */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(180deg, #2b1d3a 0%, #59324a 55%, #8a4b3c 100%);
+  color: #fff8ec;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 18px 20px 28px;
+}
+
+header { text-align: center; }
+h1 { margin: 6px 0 2px; font-size: 34px; letter-spacing: 0.5px; }
+.subtitle { margin: 0 0 14px; opacity: 0.9; font-size: 17px; }
+
+#hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+#hud span {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#hud .remain {
+  background: #2e7d32;
+  border-color: #81c784;
+  font-size: 16px;
+}
+
+#hud-timer.danger {
+  background: #b71c1c;
+  border-color: #ef9a9a;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.06); }
+}
+
+#stage {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#game {
+  display: block;
+  width: 1144px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  cursor: crosshair;
+  background: #ffd9a0;
+}
+
+#toast {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(8px);
+  background: rgba(20, 20, 30, 0.92);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+#overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+#overlay.hidden { display: none; }
+
+#overlay .panel {
+  background: rgba(24, 16, 44, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 28px 34px;
+  max-width: 560px;
+  text-align: center;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.6);
+}
+
+#overlay h2 { margin: 0 0 10px; font-size: 30px; }
+#overlay p { margin: 0 0 20px; font-size: 17px; line-height: 1.55; opacity: 0.95; }
+
+#overlay-btn {
+  font: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: #2e7d32;
+  border: none;
+  border-radius: 999px;
+  padding: 13px 28px;
+  cursor: pointer;
+}
+
+#overlay-btn:hover { background: #388e3c; }
+
+footer { text-align: center; margin-top: 16px; font-size: 14px; line-height: 1.5; }
+footer .credit { opacity: 0.75; }
+kbd {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 5px;
+  padding: 1px 7px;
+  font-family: inherit;
+}

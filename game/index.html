@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sore di Taman Desa — Spot the Difference</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <header>
+    <h1>🔍 Sore di Taman Desa</h1>
+    <p class="subtitle">Cari 7 perbedaan di antara dua gambar yang nyaris identik!</p>
+  </header>
+
+  <section id="hud" aria-label="Status permainan">
+    <span id="hud-round">Ronde 1 — Sore yang Tenang</span>
+    <span id="hud-found">Ketemu: 0/7</span>
+    <span id="hud-remain" class="remain">Sisa perbedaan: 7</span>
+    <span id="hud-timer">⏱ 150 dtk</span>
+    <span id="hud-score">Skor: 0</span>
+    <span id="hud-hints">Hint (H): 3 tersisa</span>
+  </section>
+
+  <div id="stage">
+    <canvas id="game" width="1144" height="420"></canvas>
+    <div id="toast" role="status"></div>
+    <div id="overlay" class="hidden">
+      <div class="panel">
+        <h2 id="overlay-title"></h2>
+        <p id="overlay-text"></p>
+        <button id="overlay-btn" type="button"></button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><strong>Cara main:</strong> klik perbedaan di gambar kiri atau kanan • <kbd>H</kbd> hint • <kbd>R</kbd> restart • <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> pilih ronde • klik salah −3 detik</p>
+    <p class="credit">Game orisinal "Sore di Taman Desa" — semua gambar digambar dengan Canvas 2D, semua bunyi disintesis WebAudio. Tanpa gambar atau suara eksternal.</p>
+  </footer>
+</main>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
